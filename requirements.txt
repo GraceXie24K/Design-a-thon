@@ -1,6 +1,4 @@
 pandas
 numpy
-random
 gspread
 google-auth
-re
