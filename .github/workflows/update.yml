@@ -1,4 +1,9 @@
-name: Test Python
+name: Update ticket tally
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"  # Updates ticket tally every 5 minutes
+  workflow_dispatch:
 
 on:
   workflow_dispatch:
