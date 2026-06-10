@@ -11,8 +11,8 @@ import json
 url = "https://docs.google.com/spreadsheets/d/1h7Em7IrvPW-MqvnK3sl4wCrs4U98mpBP3LgxSTn2JME/export?format=csv&gid=371215680"
 df = pd.read_csv(url)
 
-event_df = df[df["What do you wish to submit a tracking for?"] == "Event Participation"].iloc[:,1:6]
-transaction_df = df[df["What do you wish to submit a tracking for?"] == "Shop Transaction"].iloc[:,[1,5,6]]
+event_df = df[df["What do you wish to submit a tracking for?"] == "Event Participation"]
+transaction_df = df[df["What do you wish to submit a tracking for?"] == "Shop Transaction"]
 
 #Usernames
 signups = pd.read_excel("data/Signups.xlsx")
