@@ -26,7 +26,7 @@ jobs:
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add data/ticket balance.txt
-          git add data/ticket balance.json
+          git add data/ticket_balance.txt
+          git add data/ticket_balance.json
           git commit -m "Update ticket balance files" || exit 0
           git push
