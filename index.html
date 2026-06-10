@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Design-a-thon Leaderboard</title>
+  <title>Design-a-thon Ticket Tally</title>
 
   <style>
     body {
@@ -47,10 +47,6 @@
       background: #273449;
     }
 
-    .rank {
-      font-weight: bold;
-    }
-
     .score {
       text-align: right;
     }
@@ -65,13 +61,12 @@
 </head>
 
 <body>
-  <h1>🏆 Design-a-thon Leaderboard</h1>
+  <h1>Design-a-thon Ticket Tally</h1>
 
   <div class="container">
     <table>
       <thead>
         <tr>
-          <th>Rank</th>
           <th>User</th>
           <th class="score">Tickets</th>
         </tr>
@@ -95,11 +90,10 @@
       const table = document.getElementById("leaderboard");
       table.innerHTML = "";
 
-      entries.forEach((entry, index) => {
+      entries.forEach((entry) => {
         const row = document.createElement("tr");
 
         row.innerHTML = `
-          <td class="rank">#${index + 1}</td>
           <td>${entry.user}</td>
           <td class="score">${entry.score}</td>
         `;
@@ -108,7 +102,6 @@
       });
     }
 
-    // run once on page load
     loadLeaderboard();
   </script>
 </body>
