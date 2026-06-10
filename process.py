@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 import random
 import re
+import json
 
 
 
@@ -105,5 +106,13 @@ with open('data/ticket balance.txt', 'w') as f:
     for line in final:
         f.write(line)
         f.write('\n')
+
+output = {
+    f"@{user}": balance
+    for user, balance in ticket_balance.items()
+}
+
+with open("data/ticket_balance.json", "w") as f:
+    json.dump(output, f, indent=2)
 
 print(ticket_balance)
