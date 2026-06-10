@@ -112,7 +112,7 @@ output = {
     for user, balance in ticket_balance.items()
 }
 
-with open("data/ticket_balance.json", "w") as f:
+with open("data/ticket balance.json", "w") as f:
     json.dump(output, f, indent=2)
 
 print(ticket_balance)
