@@ -1,10 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Design-a-thon</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Design-a-thon Leaderboard</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      margin: 0;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background: #334155;
+    }
+
+    tr:nth-child(even) {
+      background: #273449;
+    }
+
+    .rank {
+      font-weight: bold;
+    }
+
+    .score {
+      text-align: right;
+    }
+
+    .refresh {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 12px;
+      opacity: 0.7;
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Design-a-thon</h1>
-    <script src="script.js"></script>
+  <h1>🏆 Design-a-thon Leaderboard</h1>
+
+  <div class="container">
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>User</th>
+          <th class="score">Tickets</th>
+        </tr>
+      </thead>
+      <tbody id="leaderboard"></tbody>
+    </table>
+
+    <div class="refresh">Last updated from GitHub Actions</div>
+  </div>
+
+  <script>
+    async function loadLeaderboard() {
+      const res = await fetch("data/ticket_balance.json");
+      const data = await res.json();
+
+      let entries = Object.entries(data).map(([user, score]) => ({
+        user,
+        score
+      }));
+
+      entries.sort((a, b) => b.score - a.score);
+
+      const table = document.getElementById("leaderboard");
+      table.innerHTML = "";
+
+      entries.forEach((entry, index) => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+          <td class="rank">#${index + 1}</td>
+          <td>${entry.user}</td>
+          <td class="score">${entry.score}</td>
+        `;
+
+        table.appendChild(row);
+      });
+    }
+
+    // run once on page load
+    loadLeaderboard();
+  </script>
 </body>
+</html>
