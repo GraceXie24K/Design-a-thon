@@ -8,7 +8,7 @@ import json
 
 
 
-url = "https://docs.google.com/spreadsheets/d/1pe6W3HSGVYA79sFAS5HMh1Bzt5Wpjk3UyTwwPifGyXc/export?format=csv&gid=1876965205"
+url = "https://docs.google.com/spreadsheets/d/1h7Em7IrvPW-MqvnK3sl4wCrs4U98mpBP3LgxSTn2JME/export?format=csv&gid=1876965205"
 df = pd.read_csv(url)
 
 event_df = df[df["What do you wish to submit a tracking for?"] == "Event Participation"].iloc[:,1:6]
