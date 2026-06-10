@@ -2,7 +2,7 @@ name: Update ticket tally
 
 on:
   schedule:
-    - cron: "*/5 * * * *"  # Updates ticket tally every 5 minutes
+    - cron: "*/20 * * * *"  # Updates ticket tally every 20 minutes
   workflow_dispatch:
 
 # Allows the workflow to update files and push changes
@@ -36,5 +36,8 @@ jobs:
           git config user.email github-actions@github.com
           git add data/ticket_balance.txt
           git add data/ticket_balance.json
-          git commit -m "Update ticket balance files" || exit 0
+
+          git diff --cached --quiet && exit 0
+          
+          git commit -m "Update ticket balance files"
           git push
