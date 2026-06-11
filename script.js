@@ -2,9 +2,9 @@ async function loadLeaderboard() {
       const res = await fetch("data/ticket_balance.json");
       const data = await res.json();
 
-      let entries = Object.entries(data).map(([user, score]) => ({
+      let entries = Object.entries(data).map(([user, ticket]) => ({
         user,
-        score
+        ticket
       }));
 
       const table = document.getElementById("leaderboard");
@@ -14,8 +14,8 @@ async function loadLeaderboard() {
         const row = document.createElement("tr");
 
         row.innerHTML = `
-          <td>${entry.user}</td>
-          <td class="score">${entry.score}</td>
+          <td class="user">${entry.user}</td>
+          <td class="ticket">${entry.ticket}</td>
         `;
 
         table.appendChild(row);
