@@ -17,7 +17,8 @@ h1 {
 
 .container {
     max-width: 900px;
-    margin: auto;
+    width: 90%;
+    margin: 0 auto;   /* centers container */
     background: rgba(255,255,255,0.75);
     backdrop-filter: blur(10px);
     padding: 32px;
@@ -26,10 +27,9 @@ h1 {
 }
 
 table {
-    width: 100%;
+    width: 90%;       /* table takes 90% of card */
+    margin: 0 auto;   /* centers table inside card */
     border-collapse: collapse;
-    overflow: hidden;
-    border-radius: 16px;
 }
 
 th,
@@ -63,14 +63,14 @@ tr:hover {
     color: #6355c7;
 }
 
-.user {
+th.user,
+td.user {
     text-align: left;
-    font-weight: 700;
 }
 
-.ticket {
+th.ticket,
+td.ticket {
     text-align: right;
-    font-weight: 700;
 }
 
 .refresh {
