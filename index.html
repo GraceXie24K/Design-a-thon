@@ -6,59 +6,7 @@
   <title>Design-a-thon Ticket Tally</title>
   <link rel="icon" href="assets/images/favicon.png">
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
-      margin: 0;
-      padding: 40px;
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .container {
-      max-width: 700px;
-      margin: auto;
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-    }
-
-    th, td {
-      padding: 12px;
-      text-align: left;
-    }
-
-    th {
-      background: #334155;
-    }
-
-    tr:nth-child(even) {
-      background: #273449;
-    }
-
-    .score {
-      text-align: right;
-    }
-
-    .refresh {
-      text-align: center;
-      margin-top: 10px;
-      font-size: 12px;
-      opacity: 0.7;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -75,35 +23,9 @@
       <tbody id="leaderboard"></tbody>
     </table>
 
-    <div class="refresh">Last updated from GitHub Actions</div>
+    <div class="refresh">Last updated xxxx</div>
   </div>
 
-  <script>
-    async function loadLeaderboard() {
-      const res = await fetch("data/ticket_balance.json");
-      const data = await res.json();
-
-      let entries = Object.entries(data).map(([user, score]) => ({
-        user,
-        score
-      }));
-
-      const table = document.getElementById("leaderboard");
-      table.innerHTML = "";
-
-      entries.forEach((entry) => {
-        const row = document.createElement("tr");
-
-        row.innerHTML = `
-          <td>${entry.user}</td>
-          <td class="score">${entry.score}</td>
-        `;
-
-        table.appendChild(row);
-      });
-    }
-
-    loadLeaderboard();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
