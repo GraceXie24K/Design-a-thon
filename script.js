@@ -13,9 +13,16 @@ async function loadLeaderboard() {
 
     entries.forEach((entry) => {
         const row = document.createElement("tr");
+        const username = entry.user.replace(/^@/, "");
 
         row.innerHTML = `
-          <td class="user">${entry.user}</td>
+          <td class="user">
+            <a href="https://scratch.mit.edu/users/${username}/"
+              target="_blank"
+              rel="noopener noreferrer">
+              ${entry.user}
+            </a>
+          </td>
           <td class="ticket">${entry.ticket}</td>
         `;
 
