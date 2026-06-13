@@ -1,16 +1,17 @@
 async function loadLeaderboard() {
-      const res = await fetch("data/ticket_balance.json");
-      const data = await res.json();
+    const res = await fetch("data/ticket_balance.json");
+    const lastModified = res.headers.get("Last-Modified");
+    const data = await res.json();
 
-      let entries = Object.entries(data).map(([user, ticket]) => ({
+    let entries = Object.entries(data).map(([user, ticket]) => ({
         user,
         ticket
-      }));
+    }));
 
-      const table = document.getElementById("leaderboard");
-      table.innerHTML = "";
+    const table = document.getElementById("leaderboard");
+    table.innerHTML = "";
 
-      entries.forEach((entry) => {
+    entries.forEach((entry) => {
         const row = document.createElement("tr");
 
         row.innerHTML = `
@@ -19,7 +20,14 @@ async function loadLeaderboard() {
         `;
 
         table.appendChild(row);
-      });
-    }
+    });
 
-    loadLeaderboard();
+    if (lastModified) {
+        const date = new Date(lastModified);
+
+        document.getElementById("last-updated").textContent =
+            `Last updated: ${date.toLocaleString()}`;
+    }
+}
+
+loadLeaderboard();
