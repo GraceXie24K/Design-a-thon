@@ -78,14 +78,3 @@ td {
     font-size: 0.9rem;
     color: #6d688b;
 }
-
-.pfp {
-    width: 60px;
-}
-
-.pfp img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: block;
-}
