@@ -1,5 +1,6 @@
 async function loadLeaderboard() {
       const res = await fetch("data/ticket_balance.json");
+      const lastModified = res.headers.get("Last-Modified");
       const data = await res.json();
 
       let entries = Object.entries(data).map(([user, score]) => ({
@@ -20,6 +21,14 @@ async function loadLeaderboard() {
 
         table.appendChild(row);
       });
+
+      const lastUpdatedElement = document.getElementById("last-updated");
+
+      if (lastModified && lastUpdatedElement) {
+          lastUpdatedElement.textContent =
+              `Last updated: ${new Date(lastModified).toLocaleString()}`;
+      }
+
     }
 
-    loadLeaderboard();
+loadLeaderboard();
