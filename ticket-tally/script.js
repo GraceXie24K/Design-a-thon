@@ -22,10 +22,8 @@ async function loadLeaderboard() {
         table.appendChild(row);
       });
 
-      const lastUpdatedElement = document.getElementById("last-updated");
-
-      if (lastModified && lastUpdatedElement) {
-          lastUpdatedElement.textContent =
+      if (lastModified) {
+          document.getElementById("last-updated").textContent =
               `Last updated: ${new Date(lastModified).toLocaleString()}`;
       }
 
