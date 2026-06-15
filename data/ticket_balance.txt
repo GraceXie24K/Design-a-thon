@@ -1,6 +1,6 @@
-@Lemon24K: 50
+@Lemon24K: 60
 @AnimatingDragon: 5
-@TheOneAndOnlyFinley: 10
+@TheOneAndOnlyFinley: 0
 @MoonDragn: 10
 @Io_the_Silkwing: 10
 @Demonic-Hallow: 10
