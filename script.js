@@ -1,40 +1,38 @@
 async function loadLeaderboard() {
-    const res = await fetch("data/ticket_balance.json");
-    const lastModified = res.headers.get("Last-Modified");
-    const data = await res.json();
+  const res = await fetch("data/ticket_balance.json");
+  const data = await res.json();
 
-    let entries = Object.entries(data).map(([user, ticket]) => ({
-        user,
-        ticket
-    }));
+  const lastUpdated = data.last_updated;
+  const ticketBalance = data.ticket_balance;
 
-    const table = document.getElementById("leaderboard");
-    table.innerHTML = "";
+  let entries = Object.entries(ticketBalance).map(([user, ticket]) => ({
+      user,
+      ticket
+  }));
 
-    entries.forEach((entry) => {
-        const row = document.createElement("tr");
-        const username = entry.user.replace(/^@/, "");
+  const table = document.getElementById("leaderboard");
+  table.innerHTML = "";
 
-        row.innerHTML = `
-          <td class="user">
-            <a href="https://scratch.mit.edu/users/${username}/"
-              target="_blank"
-              rel="noopener noreferrer">
-              ${entry.user}
-            </a>
-          </td>
-          <td class="ticket">${entry.ticket}</td>
-        `;
+  entries.forEach((entry) => {
+      const row = document.createElement("tr");
+      const username = entry.user.replace(/^@/, "");
 
-        table.appendChild(row);
-    });
+      row.innerHTML = `
+        <td class="user">
+          <a href="https://scratch.mit.edu/users/${username}/"
+            target="_blank"
+            rel="noopener noreferrer">
+            ${entry.user}
+          </a>
+        </td>
+        <td class="ticket">${entry.ticket}</td>
+      `;
 
-    if (lastModified) {
-        const date = new Date(lastModified);
+      table.appendChild(row);
+  });
 
-        document.getElementById("last-updated").textContent =
-            `Last updated: ${date.toLocaleString()}`;
-    }
+  document.getElementById("last-updated").textContent = `Last updated: ${lastUpdated}`;
+  
 }
 
 loadLeaderboard();
