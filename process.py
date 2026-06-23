@@ -5,9 +5,8 @@ import numpy as np
 import random
 import re
 import json
-from datetime import datetime
-
-
+from datetime import datetime, UTC
+from zoneinfo import ZoneInfo
 
 url = "https://docs.google.com/spreadsheets/d/1h7Em7IrvPW-MqvnK3sl4wCrs4U98mpBP3LgxSTn2JME/export?format=csv&gid=371215680"
 df = pd.read_csv(url)
@@ -104,7 +103,7 @@ for user in ticket_balance:
     final.append(line)
 
 # Add last updated timestamp
-time = datetime.now()
+time = datetime.now(ZoneInfo("America/Los_Angeles"))
 formatted_time = time.strftime("%Y-%m-%d %H:%M:%S")
     
 with open('data/ticket_balance.txt', 'w') as f:
@@ -114,7 +113,7 @@ with open('data/ticket_balance.txt', 'w') as f:
         f.write('\n')
 
 output = {
-    "last_updated": formatted_time,
+    "last_updated": time.isoformat(),
     "ticket_balance": {
         f"@{user}": balance
         for user, balance in ticket_balance.items()
