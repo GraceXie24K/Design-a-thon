@@ -5,6 +5,7 @@ import numpy as np
 import random
 import re
 import json
+from datetime import datetime
 
 
 
@@ -101,15 +102,23 @@ final = []
 for user in ticket_balance:
     line = f'@{user}: {ticket_balance[user]}'
     final.append(line)
+
+# Add last updated timestamp
+time = datetime.now()
+formatted_time = time.strftime("%Y-%m-%d %H:%M:%S")
     
 with open('data/ticket_balance.txt', 'w') as f:
+    f.write(f'Last Updated: {formatted_time}\n\n')
     for line in final:
         f.write(line)
         f.write('\n')
 
 output = {
-    f"@{user}": balance
-    for user, balance in ticket_balance.items()
+    "last_updated": formatted_time,
+    "ticket_balance": {
+        f"@{user}": balance
+        for user, balance in ticket_balance.items()
+    }
 }
 
 with open("data/ticket_balance.json", "w") as f:
