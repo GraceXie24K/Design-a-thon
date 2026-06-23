@@ -18,7 +18,7 @@ h1 {
 .container {
     max-width: 900px;
     width: 90%;
-    margin: 0 auto;   /* centers container */
+    margin: 0 auto;
     background: rgba(255,255,255,0.75);
     backdrop-filter: blur(10px);
     padding: 32px;
@@ -27,9 +27,12 @@ h1 {
 }
 
 table {
-    width: 90%;       /* table takes 90% of card */
-    margin: 0 auto;   /* centers table inside card */
-    border-collapse: collapse;
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 16px;
+    overflow: hidden;
 }
 
 th,
