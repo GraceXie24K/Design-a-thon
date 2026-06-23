@@ -3,5 +3,3 @@ numpy
 gspread
 google-auth
 openpyxl
-datetime
-zoneinfo
