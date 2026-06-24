@@ -63,4 +63,10 @@ async function goToUser() {
     }
 }
 
+document.getElementById("user-search").addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        goToUser();
+    }
+});
+
 loadLeaderboard();
