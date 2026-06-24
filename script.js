@@ -69,4 +69,11 @@ document.getElementById("user-search").addEventListener("keydown", (event) => {
     }
 });
 
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
 loadLeaderboard();

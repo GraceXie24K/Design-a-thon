@@ -145,3 +145,24 @@ tr.highlight {
     background: #dcd5ff !important;
     transition: background 0.3s ease;
 }
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    padding: 10px 14px;
+    border: none;
+    border-radius: 12px;
+
+    background: #6355c7;
+    color: white;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#back-to-top:hover {
+    background: #5447b8;
+}
