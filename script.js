@@ -53,7 +53,11 @@ async function goToUser() {
         });
 
         row.classList.add("highlight");
-        
+
+        setTimeout(() => {
+            row.classList.remove("highlight");
+        }, 2000);
+
     } else {
         alert("User not found in leaderboard.");
     }
