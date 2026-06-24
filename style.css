@@ -78,7 +78,7 @@ td.ticket {
 
 .refresh {
     text-align: center;
-    margin-top: 18px;
+    margin-bottom: 18px;
     font-size: 0.9rem;
     color: #6d688b;
 }
@@ -93,4 +93,55 @@ td.ticket {
 .user a:hover {
     color: #6355c7;
     text-decoration: underline;
+}
+
+.quickfind {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.quickfind input {
+    width: 60%;
+    padding: 12px 16px;
+    border: 1px solid #d9d3f3;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #1f1b3a;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.quickfind input:focus {
+    border-color: #6355c7;
+    box-shadow: 0 0 0 4px rgba(99, 85, 199, 0.15);
+}
+
+.quickfind input::placeholder {
+    color: #8a84a8;
+}
+
+.quickfind button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 12px;
+    background: #6355c7;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.quickfind button:hover {
+    background: #5447b8;
+}
+
+tr.highlight {
+    background: #dcd5ff !important;
+    transition: background 0.3s ease;
 }
