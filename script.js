@@ -37,7 +37,7 @@ document.getElementById("last-updated").textContent =
 
 }
 
-function goToUser() {
+async function goToUser() {
     const input = document
         .getElementById("user-search")
         .value
@@ -53,10 +53,7 @@ function goToUser() {
         });
 
         row.classList.add("highlight");
-
-        setTimeout(() => {
-            row.classList.remove("highlight");
-        }, 2000);
+        
     } else {
         alert("User not found in leaderboard.");
     }
