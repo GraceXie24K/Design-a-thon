@@ -61,6 +61,8 @@ async function goToUser() {
     } else {
         alert("User not found in leaderboard. Note that the quick find feature is case sensitive. Please check the username and try again.");
     }
+
+    document.getElementById("user-search").value = "";
 }
 
 document.getElementById("user-search").addEventListener("keydown", (event) => {
