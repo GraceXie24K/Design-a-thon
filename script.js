@@ -10,31 +10,6 @@ async function loadLeaderboard() {
       ticket
 }));
 
-function goToUser() {
-    const input = document
-        .getElementById("user-search")
-        .value
-        .trim()
-        .replace(/^@/, "");
-
-    const row = document.querySelector(`tr[data-user="${input}"]`);
-
-    if (row) {
-        row.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-        });
-
-        row.classList.add("highlight");
-
-        setTimeout(() => {
-            row.classList.remove("highlight");
-        }, 2000);
-    } else {
-        alert("User not found in leaderboard.");
-    }
-}
-
 const table = document.getElementById("leaderboard");
 table.innerHTML = "";
 
@@ -60,6 +35,31 @@ entries.forEach((entry) => {
 document.getElementById("last-updated").textContent = 
 `Last updated: ${new Date(data.last_updated).toLocaleString()}`;
 
+}
+
+function goToUser() {
+    const input = document
+        .getElementById("user-search")
+        .value
+        .trim()
+        .replace(/^@/, "");
+
+    const row = document.querySelector(`tr[data-user="${input}"]`);
+
+    if (row) {
+        row.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+        row.classList.add("highlight");
+
+        setTimeout(() => {
+            row.classList.remove("highlight");
+        }, 2000);
+    } else {
+        alert("User not found in leaderboard.");
+    }
 }
 
 loadLeaderboard();
