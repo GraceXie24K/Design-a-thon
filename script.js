@@ -59,7 +59,7 @@ async function goToUser() {
         }, 2000);
 
     } else {
-        alert("User not found in leaderboard.");
+        alert("User not found in leaderboard. Note that the quick find feature is case sensitive. Please check the username and try again.");
     }
 }
 
