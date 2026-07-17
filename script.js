@@ -2,7 +2,6 @@ async function loadLeaderboard() {
   const res = await fetch("data/ticket_balance.json");
   const data = await res.json();
 
-  const lastUpdated = data.last_updated;
   const ticketBalance = data.ticket_balance;
 
   let entries = Object.entries(ticketBalance).map(([user, ticket]) => ({
