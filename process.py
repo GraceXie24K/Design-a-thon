@@ -15,8 +15,12 @@ event_df = df[df["What do you wish to submit a tracking for?"] == "Event Partici
 transaction_df = df[df["What do you wish to submit a tracking for?"] == "Shop Transaction"]
 
 #Usernames
-signups = pd.read_excel("data/Signups.xlsx")
-usernames = signups['Username'].tolist()
+# signups = pd.read_excel("data/Signups.xlsx")
+# usernames = signups['Username'].tolist()
+
+with open("../data/signups.txt", "r") as file:
+    lines = file.read().splitlines()
+    usernames = [user for user in lines if user != ""]
 
 START_TICKETS = 10
 ticket_balance = {}
