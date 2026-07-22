@@ -36,6 +36,16 @@ body {
 
 }
 
+#last {
+    width: 100%;
+    position: sticky;
+    right: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+
 .link {
     color:black;
     text-decoration: none;
@@ -66,15 +76,7 @@ body {
     background-color: white;
 }
 
-#last {
-    width: 100%;
-    position: sticky;
-    right: 10px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
 
-}
 
 /* Center Text */
 #center-text {
@@ -111,8 +113,6 @@ body {
 
 .character {
     right: 0px;
-    bottom: 0;
-    position: absolute;
 }
 
 /* Bottom Bar */
