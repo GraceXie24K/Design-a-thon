@@ -18,7 +18,7 @@ transaction_df = df[df["What do you wish to submit a tracking for?"] == "Shop Tr
 # signups = pd.read_excel("data/Signups.xlsx")
 # usernames = signups['Username'].tolist()
 
-with open("../data/signups.txt", "r") as file:
+with open("data/signups.txt", "r") as file:
     lines = file.read().splitlines()
     usernames = [user for user in lines if user != ""]
 
