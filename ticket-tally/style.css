@@ -17,7 +17,8 @@ h1 {
 
 .container {
     max-width: 900px;
-    margin: auto;
+    width: 90%;
+    margin: 0 auto;
     background: rgba(255,255,255,0.75);
     backdrop-filter: blur(10px);
     padding: 32px;
@@ -26,10 +27,12 @@ h1 {
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    overflow: hidden;
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
     border-radius: 16px;
+    overflow: hidden;
 }
 
 th,
@@ -58,23 +61,109 @@ tr:hover {
     background: #ece8ff;
 }
 
-td {
-    border-bottom: 1px solid #ebe7fa;
-}
-
 .rank {
     font-weight: 700;
     color: #6355c7;
 }
 
-.score {
+th.user,
+td.user {
+    text-align: left;
+}
+
+th.ticket,
+td.ticket {
     text-align: right;
-    font-weight: 700;
 }
 
 .refresh {
     text-align: center;
-    margin-top: 18px;
+    margin-bottom: 18px;
     font-size: 0.9rem;
     color: #6d688b;
+}
+
+.user a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.2s ease;
+}
+
+.user a:hover {
+    color: #6355c7;
+    text-decoration: underline;
+}
+
+.quickfind {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.quickfind input {
+    width: 60%;
+    padding: 12px 16px;
+    border: 1px solid #d9d3f3;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #1f1b3a;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.quickfind input:focus {
+    border-color: #6355c7;
+    box-shadow: 0 0 0 4px rgba(99, 85, 199, 0.15);
+}
+
+.quickfind input::placeholder {
+    color: #8a84a8;
+}
+
+.quickfind button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 12px;
+    background: #6355c7;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.quickfind button:hover {
+    background: #5447b8;
+}
+
+tr.highlight {
+    background: #dcd5ff !important;
+    transition: background 0.3s ease;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    padding: 10px 14px;
+    border: none;
+    border-radius: 12px;
+
+    background: #6355c7;
+    color: white;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: 0.2s ease;
+    z-index: 9999;
+}
+
+#back-to-top:hover {
+    background: #5447b8;
 }

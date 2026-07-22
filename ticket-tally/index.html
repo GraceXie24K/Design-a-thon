@@ -3,27 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Design-a-thon Ticket Tally</title>
-  <link rel="icon" href="../assets/images/favicon.png">
+  <title>Design-a-thon</title>
+  <link rel="icon" href="assets/images/favicon/favicon.png">
 
   <link rel="stylesheet" href="style.css">
 </head>
+
+<button id="back-to-top" onclick="scrollToTop()">Back to Top</button>
 
 <body>
   <h1>Design-a-thon Ticket Tally</h1>
 
   <div class="container">
+    <div class="refresh" id="last-updated">Last Updated: Unknown</div>
+
+    <div class="quickfind">
+      <input
+          type="text"
+          id="user-search"
+          placeholder="Quick Find (Enter Username without @)"
+      >
+      <button onclick="goToUser()">Go</button>
+    </div>
+
     <table>
       <thead>
         <tr>
-          <th>User</th>
-          <th class="score">Tickets</th>
+          <th class = "user">User</th>
+          <th class="ticket">Tickets</th>
         </tr>
       </thead>
       <tbody id="leaderboard"></tbody>
     </table>
-
-    <div class="refresh" id="last-updated">Last updated xxxx</div>
+    
   </div>
 
   <script src="script.js"></script>
