@@ -1,23 +1,25 @@
 html,
 body {
-  height: 100vh;
-  background: #9799B9;
-  margin: 0;
-  font-family: Cambria;
-  font-weight: 600
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #ebe8f7 0%, #f5f4fb 100%);
+    color: #1f1b3a;
+    margin: 0;
+    font-weight: 600
 }
 
 .navbar {
     height: 60px;
     width: 100%;
-    position: sticky;
-    top: 0;
-    background: #373851;
+    background: #3E3E4B;
+
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+
     font-size: 20px;
-  }
+    padding: 0 10px;
+    box-sizing: border-box;
+}
 
 
 #favicon {
@@ -25,43 +27,76 @@ body {
     height: 50px;
 }
 
-#first {
-    width: 100%;
-    position: sticky;
-    top: 0;
-    left: 10px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
 
+#first,
+#last {
+    display: flex;
+    align-items: center;
 }
+
+
+#first {
+    justify-content: flex-start;
+}
+
 
 #last {
-    width: 100%;
-    position: sticky;
-    right: 10px;
-    display: flex;
     justify-content: flex-end;
-    align-items: center;
-
 }
+
 
 .link {
-    color:black;
+    color: black;
     text-decoration: none;
-    border: 5px solid #373851;
-    margin: 10px;
-    padding: 0px 10px;
-    background-color: #D5D6E9;
-  }
 
-.link:hover {
-    color:black;
-    border: 5px solid #ffffff;
     margin: 10px;
     padding: 0px 10px;
+
     background-color: #D5D6E9;
 }
+
+
+.link:hover {
+    color: #6355c7;
+}
+
+
+#menu-button {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+}
+
+
+@media (max-width: 900px) {
+
+    .navbar {
+        justify-content: space-between;
+    }
+
+
+    #first {
+        width: auto;
+    }
+
+
+    #last {
+        display: none;
+    }
+
+
+    #first .link {
+        display: none;
+    }
+
+
+    #menu-button {
+        display: block;
+    }
+}
+
 
 #lemon24k {
     text-decoration: none;
@@ -71,7 +106,6 @@ body {
 #home {
     color:black;
     text-decoration: none;
-    border: 5px solid #373851;
     margin: 10px;
     background-color: white;
 }
@@ -111,8 +145,39 @@ body {
     background-color: #ffffff;
 }
 
-.character {
-    right: 0px;
+#about-character {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+#banner{
+    position: relative;
+    width: 100%;
+}
+
+.banner-img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: clamp(30px, 5vw, 80px);
+  font-weight: bold;
+  text-align: center;
+}
+
+
+.character-img {
+    width: 150px;
+    height: auto;
 }
 
 /* Bottom Bar */

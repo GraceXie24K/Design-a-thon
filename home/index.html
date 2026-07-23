@@ -8,51 +8,67 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class ="navbar">
-        <div id = "first">
-            <img id = "favicon" src="../assets/images/favicon/favicon.png">
-            <p class = link id = "home"> HOME </p>
-            <a class = link href = 'event.html'> Events </a>
-            <a class = link href = 'event.html'> Shops </a>
-            <a class = link href = 'event.html'> Ticket Tally </a>
+    <div class="navbar">
+
+        <div id="first">
+            <img id="favicon" src="../assets/images/favicon/favicon.png">
         </div>
 
-        <div id = "last">
-            <a class = link href = 'submit.html'> Submit </a>
-            <a class = link href = 'submit.html'> Register </a>
-            <a class = link href = 'submit.html'> Login </a>
+        <button id="menu-button">
+            ☰
+        </button>
+
+        <div id="menu">
+            <div id="links-left">
+                <a class="link" id="home" href="#">Home</a>
+                <a class="link" href="event.html">Events</a>
+                <a class="link" href="event.html">Shops</a>
+                <a class="link" href="event.html">Ticket Tally</a>
+            </div>
+            <div id="links-right">
+                <a class="link" href="submit.html">Submit</a>
+                <a class="link" href="submit.html">Register</a>
+                <a class="link" href="submit.html">Login</a>
+            </div>
         </div>
+
     </div>
 
-    <div id = "center-text">
-        <p> Design-a-thon </p>
-    </div>
 
-    <div id = "about">
-        <h1> About </h1> 
-        <div class = text-box>
-        <p id = text> 
-            Design-a-Thon (DAT) is a biannual online art event currently hosted by 
-            <a id = lemon24k href = 'https://scratch.mit.edu/users/Lemon24K/'> @Lemon24K </a>, 
-            which focuses on the designing and trading of characters. Originally hosted by 
-            <a id = lemon24k href = 'https://scratch.mit.edu/users/infernal-qhost/'> @infernal-qhost </a>
-            , DAT aims foster a thriving artist community that uplifts young 
-            artists and help them find a love for designing original characters.
-        </p>
-    
-        <p id = text>
-            Design-a-Thon is split into three events: Sweet Shop, 
-            Sounds of Creativity and Combination Domination, more about which can be found on the 
-            <a id = lemon24k href = 'event.html'> Events </a> 
-            page. During events, each participant of Design-a-Thon will be assigned a prompt
-             to which they can design a character according to. Submissions from participants will 
-             be displayed on the event homepage.
-        </p>
+    <div id="banner">
+        <img class="banner-img" src="../assets/images/homepage/banner.png">
+
+        <div id="banner-text">
+            Design-a-thon
         </div>
     </div>
 
-    <div class = "character">
-        <img src = "../assets/images/homepage/mascot.png"/>
+    <div id = "about-character">
+        <div id = "about">
+            <h1> About </h1> 
+            <div class = text-box>
+                <p id = text> 
+                    Design-a-Thon (DAT) is a biannual online art event currently hosted by 
+                    <a id = lemon24k href = 'https://scratch.mit.edu/users/Lemon24K/'> @Lemon24K </a>, 
+                    which focuses on the designing and trading of characters. Originally hosted by 
+                    <a id = lemon24k href = 'https://scratch.mit.edu/users/infernal-qhost/'> @infernal-qhost </a>
+                    , DAT aims foster a thriving artist community that uplifts young 
+                    artists and help them find a love for designing original characters.
+                </p>
+            
+                <p id = text>
+                    Design-a-Thon is split into three events: Sweet Shop, 
+                    Sounds of Creativity and Combination Domination, more about which can be found on the 
+                    <a id = lemon24k href = 'event.html'> Events </a> 
+                    page. During events, each participant of Design-a-Thon will be assigned a prompt
+                    to which they can design a character according to. Submissions from participants will 
+                    be displayed on the event homepage.
+                </p>
+            </div>
+        </div>
+        <div id = "character">
+            <img class = "character-img" src = "../assets/images/homepage/mascot.png"/>
+        </div>
     </div>
 
 </body>
