@@ -22,25 +22,40 @@ body {
 }
 
 
+#first {
+    justify-content: flex-start;
+}
+
 #favicon {
     width: auto;
     height: 50px;
 }
 
-
-#first,
-#last {
-    display: flex;
-    align-items: center;
+#menu-button {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
 }
 
 
-#first {
+#menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+
+#links-left {
+    display: flex;
+    align-items: center;
     justify-content: flex-start;
 }
 
-
-#last {
+#links-right {
+    display: flex;
+    align-items: center;
     justify-content: flex-end;
 }
 
@@ -60,40 +75,43 @@ body {
     color: #6355c7;
 }
 
-
-#menu-button {
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 30px;
-}
-
-
 @media (max-width: 900px) {
-
-    .navbar {
-        justify-content: space-between;
-    }
-
-
-    #first {
-        width: auto;
-    }
-
-
-    #last {
-        display: none;
-    }
-
-
-    #first .link {
-        display: none;
-    }
-
 
     #menu-button {
         display: block;
+    }
+
+    #menu {
+        display: none;
+
+        position: absolute;
+        top: 60px;
+        right: 0;
+
+        width: 220px;
+
+        background: #3E3E4B;
+
+        flex-direction: column;
+        align-items: center;
+
+        z-index: 1000;
+    }
+
+    #menu.active {
+        display: flex;
+    }
+
+    #links-left,
+    #links-right {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .link {
+        width: 80%;
+        text-align: center;
     }
 }
 
@@ -180,13 +198,42 @@ body {
     height: auto;
 }
 
-/* Bottom Bar */
-
 #bottombar {
-    background: #373851;
-    position: sticky;
-    bottom: 0;
-    height: 60px;
+    height: 70px;
     width: 100%;
-  }
 
+    background: #3E3E4B;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 40px;
+    box-sizing: border-box;
+
+    color: white;
+}
+
+
+#footer-left p {
+    margin: 0;
+}
+
+
+#footer-socials {
+    display: flex;
+    gap: 20px;
+}
+
+
+.social-link {
+    color: white;
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+
+.social-link:hover {
+    color: #D5D6E9;
+}
